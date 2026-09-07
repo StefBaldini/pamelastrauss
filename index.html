@@ -1,851 +1,994 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pamela Strauss - Psicóloga Psicoanalista</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --cream: #F5F3F0;
-            --dark-text: #2C2C2C;
-            --accent-rust: #B8695E;
-            --sage-green: #5A6B5A;
-            --soft-green: #7A8B7A;
-            --warm-brown: #8B7355;
-            --light-taupe: #E8DDD4;
-            --border-color: #D9CFC5;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Georgia', serif;
-            background-color: var(--cream);
-            color: var(--dark-text);
-            line-height: 1.6;
-        }
-
-        /* Typography */
-        h1, h2, h3 {
-            font-family: 'Georgia', serif;
-            font-weight: 600;
-        }
-
-        h1 {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--dark-text);
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-        }
-
-        p {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 1rem;
-            line-height: 1.7;
-            max-width: 75ch;
-        }
-
-        /* Header & Navigation */
-        header {
-            background-color: var(--cream);
-            padding: 1.5rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            display: flex;
-            align-items: baseline;
-            gap: 0.5rem;
-        }
-
-        .logo h1 {
-            font-size: 1.5rem;
-            margin: 0;
-            color: var(--dark-text);
-        }
-
-        .logo p {
-            font-size: 0.75rem;
-            font-family: 'Segoe UI', sans-serif;
-            letter-spacing: 0.05em;
-            color: var(--sage-green);
-            margin: 0;
-            font-weight: 500;
-        }
-
-        nav {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark-text);
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--accent-rust);
-        }
-
-        .btn-schedule {
-            background-color: var(--accent-rust);
-            color: white;
-            padding: 0.75rem 1.75rem;
-            border: none;
-            border-radius: 2rem;
-            cursor: pointer;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-schedule:hover {
-            background-color: #A55550;
-        }
-
-        /* Hero Section */
-        .hero {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .hero-content h2 {
-            font-size: 2rem;
-            color: var(--sage-green);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            margin-bottom: 0;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            color: var(--dark-text);
-            line-height: 1.1;
-            margin-top: 0.5rem;
-        }
-
-        .hero-divider {
-            width: 60px;
-            height: 2px;
-            background-color: var(--accent-rust);
-            margin: 1.5rem 0;
-        }
-
-        .hero-content p {
-            font-size: 1.05rem;
-            margin-bottom: 2rem;
-            color: var(--dark-text);
-        }
-
-        .btn-primary {
-            background-color: var(--sage-green);
-            color: white;
-            padding: 0.85rem 2rem;
-            border: none;
-            border-radius: 2rem;
-            cursor: pointer;
-            font-family: 'Segoe UI', sans-serif;
-            font-weight: 600;
-            display: inline-block;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: #4A5A4A;
-        }
-
-        .hero-image {
-            position: relative;
-            height: 500px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .values {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .value-item {
-            text-align: center;
-        }
-
-        .value-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .value-item p {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.85rem;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            color: var(--warm-brown);
-            font-weight: 600;
-            margin: 0;
-        }
-
-        /* Quote Section */
-        .quote-section {
-            background-color: var(--sage-green);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .quote-section p {
-            font-size: 1.3rem;
-            font-style: italic;
-            margin-bottom: 0.5rem;
-            color: white;
-        }
-
-        .quote-attribution {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.9rem;
-            font-style: normal;
-            letter-spacing: 0.05em;
-        }
-
-        /* Welcome Section */
-        .welcome {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .welcome-image {
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .welcome-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .welcome-content h2 {
-            font-size: 1.1rem;
-            color: var(--warm-brown);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        .welcome-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .welcome-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .link-arrow {
-            color: var(--accent-rust);
-            font-weight: 600;
-            text-decoration: none;
-            cursor: pointer;
-            font-family: 'Segoe UI', sans-serif;
-            transition: color 0.3s ease;
-        }
-
-        .link-arrow:hover {
-            color: var(--sage-green);
-        }
-
-        /* Services Section */
-        .services {
-            background-color: white;
-            padding: 4rem 2rem;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services h2 {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--sage-green);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        .services h3 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-        }
-
-        .service-card {
-            text-align: center;
-            padding: 2rem;
-            background-color: var(--cream);
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-        }
-
-        .service-card p {
-            font-size: 0.95rem;
-            color: var(--dark-text);
-        }
-
-        /* Approach Section */
-        .approach {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .approach-content {
-            order: 2;
-        }
-
-        .approach-content h2 {
-            font-size: 1.1rem;
-            color: var(--warm-brown);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        .approach-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .approach-image {
-            order: 1;
-            height: 450px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .approach-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* About Section */
-        .about {
-            background-color: white;
-            padding: 4rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-content h2 {
-            font-size: 1.1rem;
-            color: var(--warm-brown);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 400;
-            margin-bottom: 0.5rem;
-        }
-
-        .about-content h3 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-content p {
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            height: 400px;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        .about-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            background-color: var(--light-taupe);
-            padding: 3rem 2rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .cta-section p {
-            font-size: 1.4rem;
-            font-style: italic;
-            margin-bottom: 2rem;
-            color: var(--dark-text);
-        }
-
-        .cta-section .subtitle {
-            font-style: normal;
-            font-size: 1rem;
-            margin-top: 1rem;
-        }
-
-        /* Newsletter Section */
-        .newsletter {
-            background-color: var(--cream);
-            padding: 3rem 2rem;
-        }
-
-        .newsletter-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .newsletter h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .newsletter p {
-            margin-bottom: 2rem;
-            color: var(--dark-text);
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 0.75rem;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.95rem;
-        }
-
-        .newsletter-form button {
-            padding: 0.75rem 2rem;
-            background-color: var(--sage-green);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background-color: #4A5A4A;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--dark-text);
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 3rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-column h4 {
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-        }
-
-        .footer-column a,
-        .footer-column p {
-            display: block;
-            margin-bottom: 0.75rem;
-            color: #CCCCCC;
-            text-decoration: none;
-            font-family: 'Segoe UI', sans-serif;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .footer-column a:hover {
-            color: var(--accent-rust);
-        }
-
-        .footer-bottom {
-            border-top: 1px solid #444;
-            padding-top: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #CCCCCC;
-        }
-
-        .footer-bottom p {
-            margin-bottom: 0.5rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            header {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            nav {
-                flex-direction: column;
-                gap: 1rem;
-                width: 100%;
-            }
-
-            .hero, .welcome, .approach, .about-container {
-                grid-template-columns: 1fr;
-            }
-
-            .approach-content {
-                order: 0;
-            }
-
-            .approach-image {
-                order: 0;
-            }
-
-            .values {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .hero-image, .welcome-image, .approach-image, .about-image {
-                height: 300px;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-        }
-
-        @media (max-width: 480px) {
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            h2 {
-                font-size: 1.5rem;
-            }
-
-            nav {
-                gap: 0.5rem;
-            }
-
-            nav a {
-                font-size: 0.85rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pamela Strauss — Psicóloga y Psicoanalista. Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.">
+  <title>Pamela Strauss | Psicóloga · Psicoanalista</title>
+
+  <!-- Tipografía editorial + sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ivory: #F5F1EA;
+      --ivory-2: #EFE9DF;
+      --moss: #4F5D45;
+      --moss-dark: #364133;
+      --sage: #77806B;
+      --rose: #B97868;
+      --rose-light: #D5A394;
+      --espresso: #302F2A;
+      --taupe: #CFC3B4;
+      --line: #D8CEC1;
+      --white: #FCFAF6;
+      --serif: "Cormorant Garamond", Georgia, serif;
+      --sans: "Inter", Arial, sans-serif;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--ivory);
+      color: var(--espresso);
+      font-family: var(--sans);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; width: 100%; }
+    a { color: inherit; }
+    button, input { font: inherit; }
+
+    .container {
+      width: min(calc(100% - 80px), var(--max));
+      margin-inline: auto;
+    }
+
+    /* ---------- Header ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(245,241,234,.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(216,206,193,.65);
+    }
+
+    .nav {
+      min-height: 88px;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand { text-decoration: none; }
+    .brand-name {
+      font: 500 35px/0.85 var(--serif);
+      letter-spacing: -.02em;
+      color: var(--moss-dark);
+    }
+
+    .brand-role {
+      margin-top: 8px;
+      font-size: 9px;
+      letter-spacing: .18em;
+      color: var(--moss);
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      margin-top: 5px;
+      font: italic 15px/1 var(--serif);
+      color: var(--rose);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 12px;
+      color: var(--espresso);
+      position: relative;
+      padding: 7px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--rose);
+      transition: width .25s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after { width: 100%; }
+
+    .header-cta {
+      justify-self: end;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 43px;
+      padding: 0 23px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+    .btn-moss { background: var(--moss); color: white; }
+    .btn-moss:hover { background: var(--moss-dark); }
+    .btn-rose { background: var(--rose); color: white; }
+    .btn-outline { border: 1px solid var(--rose); color: var(--rose); background: transparent; }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 650px;
+      display: grid;
+      grid-template-columns: .9fr 1.35fr;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-copy {
+      padding: 90px 45px 70px max(40px, calc((100vw - var(--max))/2));
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .eyebrow {
+      color: var(--moss);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero h1 {
+      font: 500 clamp(65px, 7vw, 100px)/.78 var(--serif);
+      letter-spacing: -.055em;
+      color: var(--moss-dark);
+      max-width: 540px;
+    }
+
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 22px;
+      color: var(--rose);
+    }
+
+    .ornament::before {
+      content: "";
+      width: 30px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .ornament svg { width: 48px; height: 26px; }
+
+    .hero-copy > p {
+      max-width: 430px;
+      font-size: 15px;
+      line-height: 1.8;
+      margin-bottom: 26px;
+    }
+
+    .hero-image {
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      height: 100%;
+      object-fit: cover;
+      object-position: 53% center;
+    }
+
+    .hero-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(245,241,234,.13), transparent 22%, transparent);
+      pointer-events: none;
+    }
+
+    /* ---------- Values ---------- */
+    .values {
+      width: min(calc(100% - 80px), 900px);
+      margin: -72px auto 0;
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .value {
+      text-align: center;
+      padding: 12px 20px 22px;
+    }
+
+    .value-icon {
+      height: 62px;
+      display: grid;
+      place-items: center;
+      color: var(--moss);
+    }
+
+    .value-icon svg { width: 49px; height: 49px; stroke-width: 1.25; }
+    .value h3 {
+      font: 500 15px/1 var(--serif);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: var(--moss-dark);
+      margin-top: 9px;
+    }
+
+    /* ---------- Quote ---------- */
+    .quote {
+      background: var(--moss);
+      color: var(--ivory);
+      padding: 31px 20px;
+      margin-top: 12px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      left: 7%;
+      top: -40px;
+      border: 1px solid rgba(213,163,148,.35);
+      border-radius: 50%;
+    }
+
+    .quote-text {
+      font: italic 27px/1.15 var(--serif);
+      position: relative;
+      z-index: 1;
+    }
+
+    .quote-by {
+      margin-top: 9px;
+      font-size: 9px;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: #E6DCD0;
+    }
+
+    /* ---------- Welcome / vínculo ---------- */
+    .welcome {
+      background: var(--ivory);
+      padding: 74px 0;
+    }
+
+    .welcome-grid {
+      display: grid;
+      grid-template-columns: 1fr 300px 1fr;
+      align-items: center;
+      gap: 42px;
+    }
+
+    .section-label {
+      color: var(--moss);
+      text-transform: uppercase;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .16em;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font: 500 34px/1 var(--serif);
+      color: var(--moss-dark);
+      margin-bottom: 20px;
+    }
+
+    .small-line {
+      width: 35px;
+      height: 1px;
+      background: var(--rose);
+      margin: 16px 0 20px;
+    }
+
+    .copy p {
+      font-size: 13px;
+      line-height: 1.9;
+      margin-bottom: 16px;
+      max-width: 410px;
+    }
+
+    .text-link {
+      color: var(--rose);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .vinculo-photo {
+      height: 315px;
+      overflow: hidden;
+      border-radius: 150px 150px 0 0;
+      background: var(--taupe);
+    }
+
+    .vinculo-photo img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    /* ---------- Services ---------- */
+    .services {
+      background: var(--ivory-2);
+      padding: 74px 0 78px;
+      text-align: center;
+    }
+
+    .services .section-title { margin-bottom: 8px; }
+
+    .services-intro {
+      font: italic 17px var(--serif);
+      color: var(--rose);
+      margin-bottom: 40px;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+
+    .service {
+      padding: 8px 28px 10px;
+      border-right: 1px solid var(--line);
+    }
+
+    .service:last-child { border-right: 0; }
+
+    .service-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 17px;
+      border-radius: 50%;
+      background: #E2D9CC;
+      display: grid;
+      place-items: center;
+      color: var(--moss);
+    }
+
+    .service-icon svg { width: 30px; height: 30px; stroke-width: 1.2; }
+
+    .service h3 {
+      font: 500 19px/1.05 var(--serif);
+      color: var(--moss-dark);
+      margin-bottom: 12px;
+    }
+
+    .service p {
+      font-size: 11px;
+      line-height: 1.65;
+    }
+
+    /* ---------- Approach + about ---------- */
+    .split-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 430px;
+    }
+
+    .approach-photo {
+      position: relative;
+      min-height: 430px;
+      background:
+        linear-gradient(135deg, rgba(54,65,51,.9), rgba(79,93,69,.78)),
+        url("https://images.unsplash.com/photo-1497250681960-ef046c08a56e?auto=format&fit=crop&w=1200&q=85") center/cover;
+      overflow: hidden;
+    }
+
+    .approach-photo::after {
+      content: "FOTO · TEXTURA ORGÁNICA";
+      position: absolute;
+      left: 42px;
+      bottom: 38px;
+      font: 10px var(--sans);
+      letter-spacing: .16em;
+      color: rgba(255,255,255,.72);
+    }
+
+    .approach-copy {
+      padding: 65px max(40px, calc((100vw - var(--max))/2)) 65px 62px;
+      background: var(--moss-dark);
+      color: var(--ivory);
+    }
+
+    .approach-copy .section-label { color: #D5A394; }
+    .approach-copy .section-title { color: var(--ivory); }
+    .approach-copy .small-line { background: #D5A394; }
+    .approach-copy p {
+      font-size: 13px;
+      line-height: 1.85;
+      max-width: 500px;
+      margin-bottom: 18px;
+      color: #E5DED3;
+    }
+
+    .about {
+      background: var(--white);
+      padding: 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 440px;
+    }
+
+    .about-photo {
+      min-height: 440px;
+      overflow: hidden;
+      background: var(--taupe);
+    }
+
+    .about-photo img {
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+    }
+
+    .about-copy {
+      padding: 70px 8% 70px 65px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .about-copy::after {
+      content: "PS";
+      position: absolute;
+      right: 5%;
+      bottom: -40px;
+      font: 170px/1 var(--serif);
+      color: rgba(79,93,69,.06);
+    }
+
+    .about-copy p {
+      font-size: 13px;
+      line-height: 1.9;
+      max-width: 470px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- CTA ---------- */
+    .cta {
+      background: var(--rose);
+      color: white;
+      padding: 38px 0;
+    }
+
+    .cta-inner {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 35px;
+    }
+
+    .cta-quote {
+      font: italic 31px/1.05 var(--serif);
+      max-width: 500px;
+    }
+
+    .cta-divider {
+      width: 1px;
+      height: 76px;
+      background: rgba(255,255,255,.5);
+    }
+
+    .cta-action { text-align: left; }
+    .cta-action p {
+      font-size: 11px;
+      margin-bottom: 12px;
+    }
+    .cta-action .btn {
+      background: var(--white);
+      color: var(--rose);
+      min-width: 165px;
+    }
+
+    /* ---------- Newsletter ---------- */
+    .newsletter {
+      background: var(--ivory);
+      padding: 42px 0;
+    }
+
+    .newsletter-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .newsletter-copy h2 {
+      font: 500 29px/1 var(--serif);
+      color: var(--moss-dark);
+    }
+
+    .newsletter-copy p {
+      margin-top: 6px;
+      font-size: 11px;
+      max-width: 420px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 10px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      min-width: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.55);
+      padding: 0 20px;
+      height: 45px;
+      outline: none;
+      font-size: 11px;
+    }
+
+    .newsletter-form button {
+      border: 0;
+      border-radius: 999px;
+      background: var(--moss);
+      color: white;
+      padding: 0 24px;
+      cursor: pointer;
+      font-size: 11px;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+      background: var(--moss-dark);
+      color: var(--ivory);
+      padding: 55px 0 22px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 38px;
+      border-bottom: 1px solid rgba(255,255,255,.16);
+    }
+
+    .footer-brand .brand-name { color: var(--ivory); }
+    .footer-brand .brand-role { color: #D8D0C5; }
+    .footer-brand .brand-tagline { color: #D5A394; }
+
+    .footer-col h3 {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      margin-bottom: 15px;
+      color: #D5A394;
+    }
+
+    .footer-col a,
+    .footer-col p {
+      display: block;
+      text-decoration: none;
+      color: #DDD6CC;
+      font-size: 10px;
+      margin-bottom: 7px;
+    }
+
+    .footer-bottom {
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      color: #BFC0B7;
+      font-size: 9px;
+    }
+
+    /* ---------- Decorative ---------- */
+    .leaf-decoration {
+      position: absolute;
+      width: 120px;
+      opacity: .45;
+      color: var(--rose);
+      pointer-events: none;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1050px) {
+      .nav { grid-template-columns: 1fr auto; }
+      .nav-links { display: none; }
+      .header-cta { grid-column: 2; }
+      .hero { grid-template-columns: 1fr 1fr; }
+      .hero-copy { padding-left: 40px; }
+      .welcome-grid { grid-template-columns: 1fr 260px 1fr; gap: 25px; }
+    }
+
+    @media (max-width: 760px) {
+      .container { width: min(calc(100% - 36px), var(--max)); }
+      .nav { min-height: 76px; }
+      .brand-name { font-size: 29px; }
+      .brand-tagline { font-size: 13px; }
+
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-copy {
+        padding: 60px 28px 35px;
+        order: 1;
+      }
+
+      .hero h1 { font-size: clamp(58px, 18vw, 82px); }
+      .hero-image { min-height: 430px; order: 2; }
+
+      .values {
+        width: calc(100% - 30px);
+        margin: -15px auto 0;
+        background: var(--ivory);
+        border-radius: 18px;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .value { padding: 10px 4px 18px; }
+      .value-icon svg { width: 40px; height: 40px; }
+      .value h3 { font-size: 10px; letter-spacing: .08em; }
+
+      .quote { margin-top: 0; }
+      .quote-text { font-size: 23px; }
+
+      .welcome { padding: 55px 0; }
+      .welcome-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .vinculo-photo { height: 340px; max-width: 320px; margin: auto; }
+      .copy { text-align: left; }
+
+      .service-grid { grid-template-columns: 1fr 1fr; }
+      .service { padding: 25px 16px; border-bottom: 1px solid var(--line); }
+      .service:nth-child(2) { border-right: 0; }
+      .service:nth-child(3),
+      .service:nth-child(4) { border-bottom: 0; }
+
+      .split-section,
+      .about-grid { grid-template-columns: 1fr; }
+
+      .approach-photo,
+      .about-photo { min-height: 330px; }
+
+      .approach-copy,
+      .about-copy { padding: 52px 28px; }
+
+      .cta-inner { grid-template-columns: 1fr; gap: 18px; text-align: center; }
+      .cta-quote { margin: auto; font-size: 28px; }
+      .cta-divider { width: 70px; height: 1px; margin: auto; }
+      .cta-action { text-align: center; }
+
+      .newsletter-inner { grid-template-columns: 1fr; gap: 22px; }
+      .newsletter-form { flex-direction: column; }
+      .newsletter-form input { height: 48px; }
+      .newsletter-form button { height: 46px; }
+
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (max-width: 460px) {
+      .header-cta .btn { padding: 0 15px; }
+      .service-grid { grid-template-columns: 1fr; }
+      .service { border-right: 0 !important; border-bottom: 1px solid var(--line) !important; }
+      .service:last-child { border-bottom: 0 !important; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>Pamela Strauss</h1>
-            <div>
-                <p>PSICÓLOGA</p>
-                <p style="margin-top: -0.25rem;">PSICOANALISTA</p>
-            </div>
-        </div>
-        <nav>
-            <a href="#inicio">Inicio</a>
-            <a href="#about">Sobre mí</a>
-            <a href="#approach">Mi enfoque</a>
-            <a href="#services">Servicios</a>
-            <a href="#resources">Recursos</a>
-            <a href="#contact">Contacto</a>
-            <button class="btn-schedule">Agendar sesión</button>
-        </nav>
-    </header>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Pamela Strauss">
+        <div class="brand-name">Pamela Strauss</div>
+        <div class="brand-role">Psicóloga · Psicoanalista</div>
+        <div class="brand-tagline">Lo que habita dentro.</div>
+      </a>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="hero-content">
-            <h2>Un lugar para</h2>
-            <h1>encontrarnos</h1>
-            <div class="hero-divider"></div>
-            <p>Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
-            <button class="btn-primary">Conversaremos</button>
-        </div>
-        <div class="hero-image">
-            <img src="https://images.unsplash.com/photo-1573497019236-17f8cf16f237?w=600&h=500&fit=crop" alt="Sesión terapéutica">
-        </div>
-    </section>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a class="active" href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#enfoque">Mi enfoque</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-    <!-- Values Section -->
-    <section class="values" style="padding: 3rem 2rem; max-width: 1200px; margin: 0 auto;">
-        <div class="value-item">
-            <div class="value-icon">🔗</div>
-            <p>Lazo</p>
-        </div>
-        <div class="value-item">
-            <div class="value-icon">💝</div>
-            <p>Amorosidad</p>
-        </div>
-        <div class="value-item">
-            <div class="value-icon">🤝</div>
-            <p>Vínculo</p>
-        </div>
-    </section>
-
-    <!-- Quote Section -->
-    <div class="quote-section">
-        <p>"Porque todo proceso comienza en un vínculo."</p>
-        <p class="quote-attribution">PAMELA STRAUSS · Psicóloga · Psicoanalista</p>
+      <div class="header-cta">
+        <a class="btn btn-rose" href="#contacto">Agendar sesión</a>
+      </div>
     </div>
+  </header>
 
-    <!-- Welcome Section -->
+  <main>
+    <section class="hero" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">Un lugar para</div>
+        <h1>encontrarnos</h1>
+
+        <div class="ornament" aria-hidden="true">
+          <svg viewBox="0 0 60 30" fill="none">
+            <path d="M2 15h27M29 15c7-2 13-7 17-13M29 15c8 1 14 6 18 13M38 12c4-4 8-5 12-5M39 18c4 3 8 4 12 4" stroke="currentColor"/>
+          </svg>
+        </div>
+
+        <p>Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
+        <a class="btn btn-moss" href="#contacto">Conversaremos <span>→</span></a>
+      </div>
+
+      <div class="hero-image">
+        <!-- FOTO PRINCIPAL: reemplaza assets/consulta.jpg si deseas otra imagen -->
+        <img src="assets/consulta.jpg" alt="Pamela Strauss en consulta con una paciente">
+      </div>
+    </section>
+
+    <section class="values" aria-label="Valores de la práctica">
+      <article class="value">
+        <div class="value-icon">
+          <!-- Lazo -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M31.8 31.6C24.8 17 12 18.2 9.7 28.1c-2.4 10.2 10.2 16.4 20.5 3.2C40.4 18.2 53 20.4 54.2 30.3c1.2 9.5-11.2 15.5-22.4 2.2C20.8 19.4 10.4 28.5 15 38c4.8 9.8 16.9 7.8 17-6.4.2-14.2 13.8-18 21-8.8 7.2 9.2-3.8 20.7-15.9 12.1-12.2-8.6-18.9 3.3-12.8 11.3 5.9 7.7 18.5 3.7 17.1-7.5" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Lazo</h3>
+      </article>
+
+      <article class="value">
+        <div class="value-icon">
+          <!-- Amorosidad -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M32 53S10 40 10 23c0-8 5.8-13 12.5-13 4.3 0 7.9 2.4 9.5 6.1C33.6 12.4 37.2 10 41.5 10 48.2 10 54 15 54 23c0 17-22 30-22 30Z" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Amorosidad</h3>
+      </article>
+
+      <article class="value">
+        <div class="value-icon">
+          <!-- Vínculo -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="21" stroke="currentColor"/>
+            <circle cx="32" cy="11" r="4" fill="var(--ivory)" stroke="currentColor"/>
+            <circle cx="14" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
+            <circle cx="50" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Vínculo</h3>
+      </article>
+    </section>
+
+    <section class="quote">
+      <div class="quote-text">“Porque todo proceso comienza en un vínculo.”</div>
+      <div class="quote-by">Pamela Strauss · Psicóloga · Psicoanalista</div>
+    </section>
+
     <section class="welcome">
-        <div class="welcome-content">
-            <h2>Bienvenida</h2>
-            <h3>Un espacio terapéutico</h3>
-            <p>La práctica de Pamela Strauss nace de una mirada profundamente humana sobre el encuentro con el otro. Un espacio donde escuchar, pensar y poner en palabras aquello que nos habita.</p>
-            <a href="#about" class="link-arrow">Conoce más sobre mí →</a>
+      <div class="container welcome-grid">
+        <div class="copy">
+          <div class="section-label">Bienvenida</div>
+          <h2 class="section-title">Un espacio terapéutico</h2>
+          <div class="small-line"></div>
+          <p>La práctica de Pamela Strauss nace de una mirada profundamente humana sobre el encuentro con el otro.</p>
+          <p><strong>Un espacio donde escuchar, pensar y poner en palabras aquello que nos habita.</strong></p>
+          <a class="text-link" href="#sobre-mi">Conoce más sobre mí&nbsp; →</a>
         </div>
-        <div class="welcome-image">
-            <img src="https://images.unsplash.com/photo-1577720643272-265f434b3b0f?w=600&h=400&fit=crop" alt="Conexión humana">
+
+        <div class="vinculo-photo">
+          <!-- FOTO DE VÍNCULO: idealmente una escena cálida de conversación terapéutica -->
+          <img src="assets/consulta.jpg" alt="Escena de vínculo terapéutico">
         </div>
+
+        <div class="copy">
+          <div class="section-label">Para quién es este espacio</div>
+          <h2 class="section-title">Un lugar para comprenderte</h2>
+          <div class="small-line"></div>
+          <p>Para quienes buscan comprenderse, atravesar momentos difíciles, sanar lazos, entender sus emociones y encontrar nuevas formas de estar consigo mismos y con los demás.</p>
+          <a class="text-link" href="#contacto">Agendar una sesión&nbsp; →</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="services-container">
-            <h2>Servicios</h2>
-            <h3>Acompañamiento terapéutico</h3>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🧠</div>
-                    <h4>Psicoanálisis individual</h4>
-                    <p>Un espacio para explorar tu mundo interno, donde cada cambio desde el conocimiento de ti.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">💑</div>
-                    <h4>Terapia de pareja</h4>
-                    <p>Acompañamiento para transitar conflictos, mejorar la comunicación y fortalecer el vínculo.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">📚</div>
-                    <h4>Orientación y consulta</h4>
-                    <p>Sesiones puntuales para reflexionar sobre situaciones específicas que necesitan ser pensadas.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">✍️</div>
-                    <h4>Psicoeducación</h4>
-                    <p>Espacios y contenidos para comprender conceptos clave sobre lo humano y lo emocional.</p>
-                </div>
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-label">Servicios</div>
+        <h2 class="section-title">Acompañamiento terapéutico</h2>
+        <div class="services-intro">Un espacio pensado para tu proceso.</div>
+
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M16 27h32M21 27v19h22V27M13 46h38M24 27V18h16v9" stroke="currentColor"/>
+              </svg>
             </div>
+            <h3>Psicoanálisis individual</h3>
+            <p>Un espacio para explorar tu mundo interno, comprender lo que te habita y generar cambios desde el conocimiento de ti.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <circle cx="23" cy="25" r="9" stroke="currentColor"/>
+                <circle cx="41" cy="25" r="9" stroke="currentColor"/>
+                <path d="M9 47c2-8 8-12 14-12s12 4 14 12M27 47c2-8 8-12 14-12s12 4 14 12" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Terapia de pareja</h3>
+            <p>Acompañamiento para transitar conflictos, mejorar la comunicación y fortalecer el vínculo.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M13 12h38v40H13zM13 18h19v34M32 18h19" stroke="currentColor"/>
+                <path d="M19 26h8M19 32h8M38 26h8M38 32h8" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Orientación y consulta</h3>
+            <p>Sesiones puntuales para reflexionar sobre situaciones específicas que necesitan ser pensadas.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="m39 12 13 13-24 24-13 3 3-13 24-24Z" stroke="currentColor"/>
+                <path d="m34 17 13 13M15 49l8-2" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Psicoeducación</h3>
+            <p>Espacios y contenidos para comprender conceptos clave sobre lo humano y lo emocional.</p>
+          </article>
         </div>
+      </div>
     </section>
 
-    <!-- Approach Section -->
-    <section class="approach" id="approach">
-        <div class="approach-image">
-            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=600&h=450&fit=crop" alt="Mi enfoque">
-        </div>
-        <div class="approach-content">
-            <h2>Mi enfoque</h2>
-            <h3>Escucha, profundidad y respeto por tu historia</h3>
-            <p>Desde el psicoanálisis, ofrezco un espacio seguro y confidencial donde cada palabra tiene peso. Creo en el poder de la palabra, el vínculo y el tiempo para generar transformaciones profundas y duraderas.</p>
-            <p>Mi compromiso es ofrecer un espacio cálido, ético y profesional para acompañarte en tu proceso.</p>
-            <a href="#contact" class="link-arrow">Conoce más sobre mi enfoque →</a>
-        </div>
+    <section class="split-section" id="enfoque">
+      <div class="approach-photo">
+        <!-- FOTO DE ENFOQUE: sustituible por una macro de hoja / textura orgánica -->
+      </div>
+      <div class="approach-copy">
+        <div class="section-label">Mi enfoque</div>
+        <h2 class="section-title">Escucha, profundidad y respeto por tu historia.</h2>
+        <div class="small-line"></div>
+        <p>Desde el psicoanálisis, ofrezco un espacio seguro y confidencial, donde cada palabra tiene peso y cada historia importa.</p>
+        <p>Creo en el poder de la palabra, el vínculo y el tiempo para generar transformaciones profundas y duraderas.</p>
+        <a class="text-link" style="color:#D5A394" href="#contacto">Conoce más sobre mi enfoque&nbsp; →</a>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>Sobre mí</h2>
-                <h3>Pamela Strauss</h3>
-                <p>Soy Pamela Strauss, psicóloga y psicoanalista. Creo en el poder de la palabra, el vínculo y del tiempo para generar transformaciones profundas y duraderas.</p>
-                <p>Mi compromiso es ofrecer un espacio cálido, ético y profesional para acompañarte en tu proceso de autoconocimiento y crecimiento.</p>
-                <a href="#contact" class="link-arrow">Conoce más mi historia →</a>
-            </div>
-            <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1487180144351-b8472da7d491?w=600&h=400&fit=crop" alt="Pamela Strauss">
-            </div>
+    <section class="about" id="sobre-mi">
+      <div class="about-grid">
+        <div class="about-photo">
+          <!-- FOTO DE PAMELA -->
+          <img src="assets/pamela.jpg" alt="Pamela Strauss, psicóloga y psicoanalista">
         </div>
+        <div class="about-copy">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">Pamela Strauss</h2>
+          <div class="small-line"></div>
+          <p>Soy Pamela Strauss, psicóloga y psicoanalista. Creo en el poder de la palabra, el vínculo y del tiempo para generar transformaciones profundas y duraderas.</p>
+          <p>Mi compromiso es ofrecer un espacio cálido, ético y profesional para acompañarte en tu proceso de autoconocimiento y crecimiento.</p>
+          <a class="text-link" href="#contacto">Conoce mi historia&nbsp; →</a>
+        </div>
+      </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <p>"Lo que no se nombra, pesa.<br>Lo que se nombra, transforma."</p>
-        <p class="subtitle">¿Te gustaría comenzar este proceso?</p>
-        <button class="btn-schedule">Agendar sesión</button>
+    <section class="cta" id="contacto">
+      <div class="container cta-inner">
+        <div class="cta-quote">“Lo que no se nombra, pesa.<br>Lo que se nombra, transforma.”</div>
+        <div class="cta-divider"></div>
+        <div class="cta-action">
+          <p>¿Te gustaría comenzar este proceso?</p>
+          <a class="btn" href="mailto:contacto@pamelastrauss.com?subject=Agendar%20sesión">Agendar sesión</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Newsletter Section -->
-    <section class="newsletter" id="resources">
-        <div class="newsletter-container">
-            <h3>✉️ Reflexiones en tu correo</h3>
-            <p>Recibe comentarios, reflexiones y pensamientos para tu bienestar emocional.</p>
-            <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Gracias por suscribirte');">
-                <input type="email" placeholder="Tu correo electrónico" required>
-                <button type="submit">Suscribirme</button>
-            </form>
+    <section class="newsletter" id="recursos">
+      <div class="container newsletter-inner">
+        <div class="newsletter-copy">
+          <h2>Reflexiones en tu correo</h2>
+          <p>Recibe contenidos, lecturas y pensamientos para tu bienestar emocional.</p>
         </div>
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Gracias por suscribirte.');">
+          <input type="email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico">
+          <button type="submit">Suscribirme</button>
+        </form>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer id="contact">
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>Navegación</h4>
-                <a href="#inicio">Inicio</a>
-                <a href="#about">Sobre mí</a>
-                <a href="#approach">Mi enfoque</a>
-                <a href="#services">Servicios</a>
-            </div>
-            <div class="footer-column">
-                <h4>Servicios</h4>
-                <a href="#services">Psicoanálisis</a>
-                <a href="#services">Terapia de pareja</a>
-                <a href="#services">Consulta</a>
-                <a href="#services">Psicoeducación</a>
-            </div>
-            <div class="footer-column">
-                <h4>Contacto</h4>
-                <p>+57 300 000 0000</p>
-                <a href="mailto:contacto@pamelastrauss.com">contacto@pamelastrauss.com</a>
-            </div>
-            <div class="footer-column">
-                <h4>Legales</h4>
-                <a href="#">Política de privacidad</a>
-                <a href="#">Términos y condiciones</a>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Pamela Strauss</div>
+          <div class="brand-role">Psicóloga · Psicoanalista</div>
+          <div class="brand-tagline">Lo que habita dentro.</div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Pamela Strauss. Todos los derechos reservados.</p>
+
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#enfoque">Mi enfoque</a>
         </div>
-    </footer>
+
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <a href="#servicios">Psicoanálisis</a>
+          <a href="#servicios">Terapia de pareja</a>
+          <a href="#servicios">Consulta</a>
+          <a href="#servicios">Psicoeducación</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <a href="mailto:contacto@pamelastrauss.com">info@pamelastrauss.com</a>
+          <p>+57 300 000 0000</p>
+          <p>Consultas online y presenciales</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Pamela Strauss. Todos los derechos reservados.</span>
+        <span>Política de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
