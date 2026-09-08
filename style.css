@@ -967,6 +967,7 @@ footer {
 @media (max-width: 560px) {
   .container {
     width: calc(100% - 32px);
+   padding-top: 30px;
   }
 
   .nav {
@@ -991,6 +992,8 @@ footer {
     min-height: 39px;
     padding: 0 14px;
     font-size: 10px;
+   position: relative;
+    top: -70px;
   }
 
   .hero-copy {
