@@ -331,7 +331,7 @@ input {
 }
 
 .value {
-  text-align: left;
+  text-align: center;
   padding: 0;
 }
 
@@ -342,11 +342,12 @@ input {
   justify-content: flex-start;
   color: var(--moss);
   margin-bottom: 8px;
+margin-left: 5px;
 }
 
 .value-icon svg {
-  width: 34px;
-  height: 34px;
+  width: 60px;
+  height: 60px;
   stroke-width: 1.2;
 }
 
