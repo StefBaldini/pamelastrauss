@@ -1,233 +1,283 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pamela Strauss - Psicóloga / Psicoanalista</title>
-    <!-- Fuentes Google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- Iconos FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pamela Strauss — Psicóloga y Psicoanalista. Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.">
+  <title>Pamela Strauss | Psicóloga · Psicoanalista</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- CSS externo -->
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Pamela Strauss">
+        <div class="brand-name">Pamela Strauss</div>
+        <div class="brand-role">Psicóloga · Psicoanalista</div>
+        <div class="brand-tagline">Lo que habita dentro.</div>
+      </a>
 
-    <!-- Header / Navegación -->
-    <header class="navbar">
-        <div class="logo">
-            <h1>Pamela Strauss</h1>
-            <span>PSICÓLOGA · PSICOANALISTA</span>
-            <p class="slogan">Lo que habita dentro.</p>
-        </div>
-        
-        <input type="checkbox" id="nav-toggle" class="nav-toggle">
-        <label for="nav-toggle" class="nav-toggle-label">
-            <i class="fa-solid fa-bars"></i>
-        </label>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-links">
+          <li><a class="active" href="#inicio">Inicio</a></li>
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#enfoque">Mi enfoque</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#recursos">Recursos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
 
-        <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-mi">Sobre mí</a></li>
-                <li><a href="#enfoque">Mi enfoque</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#recursos">Recursos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-                <li class="mobile-only"><a href="#agendar" class="btn-agendar-nav">AGENDAR SESIÓN</a></li>
-            </ul>
-        </nav>
-        
-        <a href="#agendar" class="btn-agendar desktop-only">AGENDAR SESIÓN</a>
-    </header>
+      <div class="header-cta">
+        <a class="btn btn-rose" href="#contacto">Agendar sesión</a>
+      </div>
+    </div>
+  </header>
 
-    <!-- Hero Section / Banner Inicial -->
+  <main>
     <section class="hero" id="inicio">
-        <div class="hero-container">
-            <div class="hero-left">
-                <span class="sub-heading">UN LUGAR PARA</span>
-                <h2 class="hero-title">encontrarnos</h2>
-                
-                <div class="hero-divider">
-                    <span></span>
-                    <i class="fa-solid fa-seedling"></i>
-                    <span></span>
-                </div>
+      <div class="hero-copy">
+        <div class="eyebrow">Un lugar para</div>
+        <h1>encontrarnos</h1>
 
-                <p class="hero-description">Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
-                
-                <a href="#contacto" class="btn-primary-wide">
-                    CONVERSAREMOS <i class="fa-solid fa-arrow-right"></i>
-                </a>
-            </div>
-
-            <div class="hero-right">
-                <img src="assets/Pame1.png" alt="Pamela Strauss">
-            </div>
+        <div class="ornament" aria-hidden="true">
+          <svg viewBox="0 0 60 30" fill="none">
+            <path d="M2 15h27M29 15c7-2 13-7 17-13M29 15c8 1 14 6 18 13M38 12c4-4 8-5 12-5M39 18c4 3 8 4 12 4" stroke="currentColor"/>
+          </svg>
         </div>
 
-        <!-- Tarjeta Flotante -->
-        <div class="floating-features-card">
-            <div class="feature-item">
-                <i class="fa-solid fa-infinity"></i>
-                <span>LAZO</span>
-            </div>
-            <div class="feature-item">
-                <i class="fa-regular fa-heart"></i>
-                <span>AMOROSIDAD</span>
-            </div>
-            <div class="feature-item">
-                <i class="fa-regular fa-circle"></i>
-                <span>VÍNCULO</span>
-            </div>
-        </div>
+        <p>Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
+        <a class="btn btn-moss" href="#contacto">Conversaremos <span>→</span></a>
+      </div>
+
+      <div class="hero-image">
+        <img src="assets/consulta.jpg" alt="Escena de consulta psicológica">
+      </div>
     </section>
 
-    <!-- Banner Cita 1 -->
-    <section class="quote-banner">
-        <blockquote>
-            “Porque todo proceso comienza en un vínculo.”
-        </blockquote>
-        <cite>PAMELA STRAUSS - Psicóloga - Psicoanalista</cite>
+    <section class="values" aria-label="Valores de la práctica">
+      <article class="value">
+        <div class="value-icon">
+          <!-- Icono LAZO -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M31.8 31.6C24.8 17 12 18.2 9.7 28.1c-2.4 10.2 10.2 16.4 20.5 3.2C40.4 18.2 53 20.4 54.2 30.3c1.2 9.5-11.2 15.5-22.4 2.2C20.8 19.4 10.4 28.5 15 38c4.8 9.8 16.9 7.8 17-6.4.2-14.2 13.8-18 21-8.8 7.2 9.2-3.8 20.7-15.9 12.1-12.2-8.6-18.9 3.3-12.8 11.3 5.9 7.7 18.5 3.7 17.1-7.5" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Lazo</h3>
+      </article>
+
+      <article class="value">
+        <div class="value-icon">
+          <!-- Icono AMOROSIDAD -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M32 53S10 40 10 23c0-8 5.8-13 12.5-13 4.3 0 7.9 2.4 9.5 6.1C33.6 12.4 37.2 10 41.5 10 48.2 10 54 15 54 23c0 17-22 30-22 30Z" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Amorosidad</h3>
+      </article>
+
+      <article class="value">
+        <div class="value-icon">
+          <!-- Icono VÍNCULO -->
+          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="21" stroke="currentColor"/>
+            <circle cx="32" cy="11" r="4" fill="var(--ivory)" stroke="currentColor"/>
+            <circle cx="14" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
+            <circle cx="50" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
+          </svg>
+        </div>
+        <h3>Vínculo</h3>
+      </article>
     </section>
 
-    <!-- Bienvenida / Para quién es este espacio -->
-    <section class="welcome-section">
-        <div class="welcome-col">
-            <span class="section-tag">BIENVENIDA</span>
-            <p>La práctica de <strong>Pamela Strauss</strong> nace de una mirada profundamente humana sobre el encuentro con el otro.</p>
-            <p>Un espacio donde escuchar, pensar y poner en palabras aquello que nos habita.</p>
-            <a href="#sobre-mi" class="link-arrow">Conoce más sobre mí <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        <div class="welcome-img">
-            <img src="assets/vinculo.png" alt="Acompañamiento terapéutico">
-        </div>
-        <div class="welcome-col">
-            <span class="section-tag">PARA QUIÉN ES ESTE ESPACIO</span>
-            <p>Para quienes buscan comprenderse, atravesar momentos difíciles, sanar lazos, entender sus emociones y encontrar nuevas formas de estar consigo mismos y con los demás.</p>
-            <a href="#agendar" class="link-arrow">Agendar una sesión <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
+    <section class="quote">
+      <div class="quote-text">“Porque todo proceso comienza en un vínculo.”</div>
+      <div class="quote-by">Pamela Strauss · Psicóloga · Psicoanalista</div>
     </section>
 
-    <!-- Servicios -->
-    <section class="services-section" id="servicios">
-        <span class="section-tag text-center">SERVICIOS</span>
-        <h3 class="section-title text-center">Acompañamiento terapéutico</h3>
-
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-building-columns"></i></div>
-                <h4>Psicoanálisis individual</h4>
-                <p>Un espacio para explorar tu mundo interno, comprender lo que te habita y generar cambios desde el conocimiento de ti.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-people-holding"></i></div>
-                <h4>Terapia de pareja</h4>
-                <p>Acompañamiento para transitar conflictos, mejorar la comunicación y fortalecer el vínculo.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-regular fa-compass"></i></div>
-                <h4>Orientación y consulta</h4>
-                <p>Sesiones puntuales para reflexionar sobre situaciones específicas que necesitan ser pensadas.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon"><i class="fa-solid fa-pen-nib"></i></div>
-                <h4>Psicoeducación</h4>
-                <p>Espacios y contenidos para comprender conceptos clave sobre lo humano y lo emocional.</p>
-            </div>
+    <section class="welcome">
+      <div class="container welcome-grid">
+        <div class="copy">
+          <div class="section-label">Bienvenida</div>
+          <h2 class="section-title">Un espacio terapéutico</h2>
+          <div class="small-line"></div>
+          <p>La práctica de Pamela Strauss nace de una mirada profundamente humana sobre el encuentro con el otro.</p>
+          <p><strong>Un espacio donde escuchar, pensar y poner en palabras aquello que nos habita.</strong></p>
+          <a class="text-link" href="#sobre-mi">Conoce más sobre mí&nbsp; →</a>
         </div>
+
+        <div class="vinculo-photo">
+          <img src="assets/consulta.jpg" alt="Escena de vínculo terapéutico">
+        </div>
+
+        <div class="copy">
+          <div class="section-label">Para quién es este espacio</div>
+          <h2 class="section-title">Un lugar para comprenderte</h2>
+          <div class="small-line"></div>
+          <p>Para quienes buscan comprenderse, atravesar momentos difíciles, sanar lazos, entender sus emociones y encontrar nuevas formas de estar consigo mismos y con los demás.</p>
+          <a class="text-link" href="#contacto">Agendar una sesión&nbsp; →</a>
+        </div>
+      </div>
     </section>
 
-    <!-- Mi Enfoque y Sobre Mí -->
-    <section class="about-grid-section" id="sobre-mi">
-        <div class="about-col dark-bg" id="enfoque">
-            <span class="section-tag text-white">MI ENFOQUE</span>
-            <h3>Escucha, profundidad y respeto por tu historia.</h3>
-            <p>Desde el psicoanálisis, ofrezco un espacio seguro y confidencial, donde cada palabra tiene un lugar y cada historia importa.</p>
-            <a href="#enfoque" class="link-arrow text-white">Conoce más sobre mi enfoque <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-        <div class="about-col img-col">
-            <img src="assets/4a7edc8e-f684-4ae0-8dd8-00fa4c3f9708.png" alt="Lic. Pamela Strauss">
-        </div>
-        <div class="about-col light-bg">
-            <span class="section-tag">SOBRE MÍ</span>
-            <p>Soy <strong>Pamela Strauss</strong>, psicóloga y psicoanalista. Creo en el poder de la palabra, del vínculo y del tiempo para generar transformaciones profundas y duraderas.</p>
-            <p>Mi compromiso es ofrecer un espacio cálido, ético y profesional para acompañarte en tu proceso.</p>
-            <a href="#sobre-mi" class="link-arrow">Conoce mi historia <i class="fa-solid fa-arrow-right-long"></i></a>
-        </div>
-    </section>
+    <section class="services" id="servicios">
+      <div class="container">
+        <div class="section-label">Servicios</div>
+        <h2 class="section-title">Acompañamiento terapéutico</h2>
+        <div class="services-intro">Un espacio pensado para tu proceso.</div>
 
-    <!-- Banner Cita 2 (CTA) -->
-    <section class="quote-cta-banner">
-        <div class="quote-side">
-            <p>“Lo que no se nombra, pesa.<br>Lo que se nombra, transforma.”</p>
-        </div>
-        <div class="cta-side" id="agendar">
-            <span>¿Te gustaría comenzar este proceso?</span>
-            <a href="#contacto" class="btn-secondary">Agendar sesión</a>
-        </div>
-    </section>
-
-    <!-- Newsletter -->
-    <section class="newsletter-section" id="recursos">
-        <div class="newsletter-info">
-            <div class="icon"><i class="fa-regular fa-envelope"></i></div>
-            <div>
-                <h4>Reflexiones en tu correo</h4>
-                <p>Recibe contenidos, lecturas y pensamientos para tu bienestar emocional.</p>
+        <div class="service-grid">
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M16 27h32M21 27v19h22V27M13 46h38M24 27V18h16v9" stroke="currentColor"/>
+              </svg>
             </div>
+            <h3>Psicoanálisis individual</h3>
+            <p>Un espacio para explorar tu mundo interno, comprender lo que te habita y generar cambios desde el conocimiento de ti.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <circle cx="23" cy="25" r="9" stroke="currentColor"/>
+                <circle cx="41" cy="25" r="9" stroke="currentColor"/>
+                <path d="M9 47c2-8 8-12 14-12s12 4 14 12M27 47c2-8 8-12 14-12s12 4 14 12" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Terapia de pareja</h3>
+            <p>Acompañamiento para transitar conflictos, mejorar la comunicación y fortalecer el vínculo.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="M13 12h38v40H13zM13 18h19v34M32 18h19" stroke="currentColor"/>
+                <path d="M19 26h8M19 32h8M38 26h8M38 32h8" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Orientación y consulta</h3>
+            <p>Sesiones puntuales para reflexionar sobre situaciones específicas que necesitan ser pensadas.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">
+              <svg viewBox="0 0 64 64" fill="none">
+                <path d="m39 12 13 13-24 24-13 3 3-13 24-24Z" stroke="currentColor"/>
+                <path d="m34 17 13 13M15 49l8-2" stroke="currentColor"/>
+              </svg>
+            </div>
+            <h3>Psicoeducación</h3>
+            <p>Espacios y contenidos para comprender conceptos clave sobre lo humano y lo emocional.</p>
+          </article>
         </div>
-        <form class="newsletter-form" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Tu correo electrónico" required>
-            <button type="submit">Suscribirme</button>
+      </div>
+    </section>
+
+    <section class="split-section" id="enfoque">
+      <div class="approach-photo"></div>
+
+      <div class="approach-copy">
+        <div class="section-label">Mi enfoque</div>
+        <h2 class="section-title">Escucha, profundidad y respeto por tu historia.</h2>
+        <div class="small-line"></div>
+        <p>Desde el psicoanálisis, ofrezco un espacio seguro y confidencial, donde cada palabra tiene peso y cada historia importa.</p>
+        <p>Creo en el poder de la palabra, el vínculo y el tiempo para generar transformaciones profundas y duraderas.</p>
+        <a class="text-link" style="color:#D5A394" href="#contacto">Conoce más sobre mi enfoque&nbsp; →</a>
+      </div>
+    </section>
+
+    <section class="about" id="sobre-mi">
+      <div class="about-grid">
+        <div class="about-photo">
+          <img src="assets/pamela.jpg" alt="Pamela Strauss, psicóloga y psicoanalista">
+        </div>
+
+        <div class="about-copy">
+          <div class="section-label">Sobre mí</div>
+          <h2 class="section-title">Pamela Strauss</h2>
+          <div class="small-line"></div>
+          <p>Soy Pamela Strauss, psicóloga y psicoanalista. Creo en el poder de la palabra, el vínculo y del tiempo para generar transformaciones profundas y duraderas.</p>
+          <p>Mi compromiso es ofrecer un espacio cálido, ético y profesional para acompañarte en tu proceso de autoconocimiento y crecimiento.</p>
+          <a class="text-link" href="#contacto">Conoce mi historia&nbsp; →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta" id="contacto">
+      <div class="container cta-inner">
+        <div class="cta-quote">
+          “Lo que no se nombra, pesa.<br>
+          Lo que se nombra, transforma.”
+        </div>
+
+        <div class="cta-divider"></div>
+
+        <div class="cta-action">
+          <p>¿Te gustaría comenzar este proceso?</p>
+          <a class="btn" href="mailto:contacto@pamelastrauss.com?subject=Agendar%20sesión">Agendar sesión</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="newsletter" id="recursos">
+      <div class="container newsletter-inner">
+        <div class="newsletter-copy">
+          <h2>Reflexiones en tu correo</h2>
+          <p>Recibe contenidos, lecturas y pensamientos para tu bienestar emocional.</p>
+        </div>
+
+        <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Gracias por suscribirte.');">
+          <input type="email" placeholder="Tu correo electrónico" required aria-label="Tu correo electrónico">
+          <button type="submit">Suscribirme</button>
         </form>
+      </div>
     </section>
+  </main>
 
-    <!-- Footer -->
-    <footer class="footer" id="contacto">
-        <div class="footer-grid">
-            <div class="footer-col logo-col">
-                <h2>Pamela Strauss</h2>
-                <span class="sub-logo">PSICÓLOGA / PSICOANALISTA</span>
-                <p class="slogan">Lo que habita dentro.</p>
-                <div class="social-icons">
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h5>NAVEGACIÓN</h5>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#sobre-mi">Sobre mí</a></li>
-                    <li><a href="#enfoque">Mi enfoque</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#recursos">Recursos</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h5>CONTACTO</h5>
-                <p>info@pamelastrauss.com</p>
-                <p>+57 300 000 0000</p>
-                <p>Consultas online y presenciales</p>
-            </div>
-            <div class="footer-col brand-symbol">
-                <div class="circle-logo">
-                    P<br>S
-                </div>
-            </div>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-name">Pamela Strauss</div>
+          <div class="brand-role">Psicóloga · Psicoanalista</div>
+          <div class="brand-tagline">Lo que habita dentro.</div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2024 Pamela Strauss. Todos los derechos reservados.</p>
-            <div class="footer-links">
-                <a href="#">Política de privacidad</a>
-                <a href="#">Términos y condiciones</a>
-            </div>
-        </div>
-    </footer>
 
+        <div class="footer-col">
+          <h3>Navegación</h3>
+          <a href="#inicio">Inicio</a>
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#enfoque">Mi enfoque</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Servicios</h3>
+          <a href="#servicios">Psicoanálisis</a>
+          <a href="#servicios">Terapia de pareja</a>
+          <a href="#servicios">Consulta</a>
+          <a href="#servicios">Psicoeducación</a>
+        </div>
+
+        <div class="footer-col">
+          <h3>Contacto</h3>
+          <a href="mailto:contacto@pamelastrauss.com">info@pamelastrauss.com</a>
+          <p>+57 300 000 0000</p>
+          <p>Consultas online y presenciales</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Pamela Strauss. Todos los derechos reservados.</span>
+        <span>Política de privacidad · Términos y condiciones</span>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
