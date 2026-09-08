@@ -15,86 +15,73 @@
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#inicio" aria-label="Pamela Strauss">
-        <div class="brand-name">Pamela Strauss</div>
-        <div class="brand-role">Psicóloga · Psicoanalista</div>
-        <div class="brand-tagline">Lo que habita dentro.</div>
-      </a>
-
-      <nav aria-label="Navegación principal">
-        <ul class="nav-links">
-          <li><a class="active" href="#inicio">Inicio</a></li>
-          <li><a href="#sobre-mi">Sobre mí</a></li>
-          <li><a href="#enfoque">Mi enfoque</a></li>
-          <li><a href="#servicios">Servicios</a></li>
-          <li><a href="#recursos">Recursos</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-        </ul>
-      </nav>
-
-      <div class="header-cta">
-        <a class="btn btn-rose" href="#contacto">Agendar sesión</a>
-      </div>
+<header class="navbar">
+    <div class="logo-box">
+        <h1>Pamela Strauss</h1>
+        <span>PSICÓLOGA · PSICOANALISTA</span>
+        <p class="slogan">Lo que habita dentro.</p>
     </div>
-  </header>
+    
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-toggle-label">
+        <i class="fa-solid fa-bars"></i>
+    </label>
+
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#sobre-mi">Sobre mí</a></li>
+            <li><a href="#enfoque">Mi enfoque</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#recursos">Recursos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+            <li class="mobile-only"><a href="#agendar" class="btn-agendar-nav">AGENDAR SESIÓN</a></li>
+        </ul>
+    </nav>
+    
+    <a href="#agendar" class="btn-agendar desktop-only">AGENDAR SESIÓN</a>
+</header>
 
   <main>
     <section class="hero" id="inicio">
-      <div class="hero-copy">
-        <div class="eyebrow">Un lugar para</div>
-        <h1>encontrarnos</h1>
-
-        <div class="ornament" aria-hidden="true">
-          <svg viewBox="0 0 60 30" fill="none">
-            <path d="M2 15h27M29 15c7-2 13-7 17-13M29 15c8 1 14 6 18 13M38 12c4-4 8-5 12-5M39 18c4 3 8 4 12 4" stroke="currentColor"/>
-          </svg>
+    <div class="hero-left">
+        <span class="sub-heading">UN LUGAR PARA</span>
+        <h2 class="hero-title">encontrarnos</h2>
+        
+        <!-- Separador de ilustración sutil -->
+        <div class="hero-divider">
+            <span></span>
+            <i class="fa-solid fa-seedling"></i>
+            <span></span>
         </div>
 
-        <p>Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
-        <a class="btn btn-moss" href="#contacto">Conversaremos <span>→</span></a>
-      </div>
+        <p class="hero-description">Un espacio para escuchar, pensar y poner en palabras aquello que nos habita.</p>
+        
+        <a href="#contacto" class="btn-primary-wide">
+            CONVERSAREMOS <i class="fa-solid fa-arrow-right"></i>
+        </a>
+    </div>
 
-      <div class="hero-image">
-        <img src="assets/consulta.jpg" alt="Escena de consulta psicológica">
-      </div>
-    </section>
+    <div class="hero-right">
+        <img src="assets/Pame1.png" alt="Pamela Strauss">
+    </div>
 
-    <section class="values" aria-label="Valores de la práctica">
-      <article class="value">
-        <div class="value-icon">
-          <!-- Icono LAZO -->
-          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M31.8 31.6C24.8 17 12 18.2 9.7 28.1c-2.4 10.2 10.2 16.4 20.5 3.2C40.4 18.2 53 20.4 54.2 30.3c1.2 9.5-11.2 15.5-22.4 2.2C20.8 19.4 10.4 28.5 15 38c4.8 9.8 16.9 7.8 17-6.4.2-14.2 13.8-18 21-8.8 7.2 9.2-3.8 20.7-15.9 12.1-12.2-8.6-18.9 3.3-12.8 11.3 5.9 7.7 18.5 3.7 17.1-7.5" stroke="currentColor"/>
-          </svg>
+    <!-- Tarjeta blanca flotante que cruza la parte inferior -->
+    <div class="floating-features-card">
+        <div class="feature-item">
+            <i class="fa-solid fa-infinity"></i>
+            <span>LAZO</span>
         </div>
-        <h3>Lazo</h3>
-      </article>
-
-      <article class="value">
-        <div class="value-icon">
-          <!-- Icono AMOROSIDAD -->
-          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <path d="M32 53S10 40 10 23c0-8 5.8-13 12.5-13 4.3 0 7.9 2.4 9.5 6.1C33.6 12.4 37.2 10 41.5 10 48.2 10 54 15 54 23c0 17-22 30-22 30Z" stroke="currentColor"/>
-          </svg>
+        <div class="feature-item">
+            <i class="fa-regular fa-heart"></i>
+            <span>AMOROSIDAD</span>
         </div>
-        <h3>Amorosidad</h3>
-      </article>
-
-      <article class="value">
-        <div class="value-icon">
-          <!-- Icono VÍNCULO -->
-          <svg viewBox="0 0 64 64" fill="none" aria-hidden="true">
-            <circle cx="32" cy="32" r="21" stroke="currentColor"/>
-            <circle cx="32" cy="11" r="4" fill="var(--ivory)" stroke="currentColor"/>
-            <circle cx="14" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
-            <circle cx="50" cy="43" r="4" fill="var(--ivory)" stroke="currentColor"/>
-          </svg>
+        <div class="feature-item">
+            <i class="fa-regular fa-circle"></i>
+            <span>VÍNCULO</span>
         </div>
-        <h3>Vínculo</h3>
-      </article>
-    </section>
+    </div>
+</section>
 
     <section class="quote">
       <div class="quote-text">“Porque todo proceso comienza en un vínculo.”</div>
